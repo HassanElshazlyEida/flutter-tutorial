@@ -3,6 +3,8 @@ import 'package:udemy_flutter/pages/Home.dart';
 import 'package:udemy_flutter/pages/Setting.dart';
 import 'package:udemy_flutter/pages/profile.dart';
 
+import 'todo_page.dart';
+
 class FirstPage extends StatefulWidget {
 
   @override
@@ -72,7 +74,16 @@ class _FirstPageState extends State<FirstPage> {
                 Navigator.pop(context);
                 _navigateToPage(2);
               },
-            )
+            ),
+             ListTile(
+              leading: Icon(Icons.note, color: Colors.white), 
+              title: Text('To Do List', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoPage()));
+              },
+            ),
+            
           ]
         ),
       ),
