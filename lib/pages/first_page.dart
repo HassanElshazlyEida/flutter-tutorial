@@ -20,7 +20,7 @@ class _FirstPageState extends State<FirstPage> {
     });
   }
 
-  final List<StatelessWidget> _pages = [
+  final List _pages = [
     Home(),
     Profile(),
     Setting()
