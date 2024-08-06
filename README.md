@@ -14,3 +14,36 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Ecommerce
+
+using main function in main.dart file
+```dart
+void main() {
+
+  runApp(ECommerce());
+
+}
+```
+
+<img src="prototype/Ecommerce%20-%201.png" width="200">
+<img src="prototype/Ecommerce%20-%202.png" width="200">
+<img src="prototype/Ecommerce%20-%203.png" width="200">
+<img src="prototype/Ecommerce%20-%204.png" width="200">
+<img src="prototype/Ecommerce%20-%205.png" width="200">
+
+## To Do List
+using main function in main.dart file
+```dart
+void main() async {
+
+   await Hive.initFlutter();
+   var box = await Hive.openBox('db');
+
+  runApp(MyApp());
+}
+```
+
+<img src="prototype/To%20Do%20List%20-%201.png" width="200">
+<img src="prototype/To%20Do%20List%20-%202.png" width="200">
+<img src="prototype/To%20Do%20List%20-%203.png" width="200">
