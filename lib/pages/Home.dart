@@ -70,13 +70,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('TO DO'),
+        title: const Text('TO DO'),
         elevation: 0,
         backgroundColor: Colors.yellow,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
 
       ),
       body: ListView.builder(

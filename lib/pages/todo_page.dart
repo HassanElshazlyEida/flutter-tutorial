@@ -7,7 +7,7 @@ class ToDoPage extends  StatefulWidget {
 
 class _ToDoPageState extends State<ToDoPage> {
 
-  TextEditingController _controller = TextEditingController();  
+  final TextEditingController _controller =  TextEditingController();  
   String greetingMessage = '';
   void greetUser(){
     setState(() {
@@ -27,15 +27,15 @@ class _ToDoPageState extends State<ToDoPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(greetingMessage, style: TextStyle(fontSize: 30)),  
+                Text(greetingMessage, style:const  TextStyle(fontSize: 30)),  
                 TextField(
                   controller: _controller,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Enter your name',
                     border: OutlineInputBorder()
                   ),
                 ),
-                ElevatedButton(onPressed: greetUser, child: Text('Tap'))
+                ElevatedButton(onPressed: greetUser, child: const Text('Tap'))
               ],
             ),
           ),

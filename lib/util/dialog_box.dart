@@ -4,9 +4,9 @@ class DialogBox extends StatelessWidget {
 
 
   final Function(String) onSave;
-  TextEditingController _taskName = TextEditingController();
+  final TextEditingController _taskName = TextEditingController();
 
-  DialogBox({required this.onSave});
+  DialogBox({super.key, required this.onSave});
 
   void _onSave(BuildContext context) {
     onSave(_taskName.text);
@@ -22,7 +22,7 @@ class DialogBox extends StatelessWidget {
           width: 350,
 
           child: TextField(
-            decoration: InputDecoration(
+            decoration:const  InputDecoration(
               hintText: 'Enter Task Name',
               border: OutlineInputBorder(),
              
@@ -36,13 +36,13 @@ class DialogBox extends StatelessWidget {
             onPressed: (){
               Navigator.pop(context);
             },
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: (){
                _onSave(context);
             },
-            child: Text('Create'),
+            child: const Text('Create'),
           ),
         ],
       );

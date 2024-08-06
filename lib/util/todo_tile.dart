@@ -9,7 +9,7 @@ class ToDoTile extends StatelessWidget {
   Function(BuildContext) deleteTask;
 
 
-  ToDoTile({
+  ToDoTile({super.key, 
     required this.taskName ,
     this.taskCompleted = false,
     required this.onChanged,
@@ -22,7 +22,7 @@ class ToDoTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 25,right: 24,top: 25),
       child: Slidable(
         endActionPane: ActionPane(
-          motion: ScrollMotion(),
+          motion: const ScrollMotion(),
           children: [
             SlidableAction(
               onPressed: deleteTask,
@@ -33,8 +33,14 @@ class ToDoTile extends StatelessWidget {
           ],
         ),
         child: Container(
-            padding: EdgeInsets.all(24),
-            child: Row(
+            padding:const  EdgeInsets.all(24),
+           
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(10),
+         
+            ),
+             child: Row(
               children: [
                 Checkbox(
                   value: taskCompleted, 
@@ -48,11 +54,6 @@ class ToDoTile extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-              borderRadius: BorderRadius.circular(10),
-         
             ),
         ),
       ),

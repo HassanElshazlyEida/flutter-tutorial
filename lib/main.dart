@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:udemy_flutter/models/cart.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
 import 'package:udemy_flutter/pages/Home.dart';
+import 'pages/ecommerce/intro_page.dart';
 
 
 void main() async {
 
-  await Hive.initFlutter();
-  var box = await Hive.openBox('db');
+  // await Hive.initFlutter();
+  // var box = await Hive.openBox('db');
 
-  runApp(MyApp());
+  runApp(ECommerce());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,11 +28,25 @@ class MyApp extends StatelessWidget {
         cardColor: Colors.white,
         canvasColor: Colors.yellow,
         dialogBackgroundColor: Colors.yellow,
-        colorScheme: ColorScheme.light(primary: Colors.black),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        colorScheme: const ColorScheme.light(primary: Colors.black),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Colors.yellow,
           foregroundColor: Colors.black,
         ),
+      ),
+    );
+  } 
+}
+
+class ECommerce extends StatelessWidget {
+  
+ @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: IntroPage(),
       ),
     );
   } 

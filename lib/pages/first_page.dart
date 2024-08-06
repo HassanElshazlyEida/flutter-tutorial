@@ -32,12 +32,12 @@ class _FirstPageState extends State<FirstPage> {
       body: _pages[_selectedIndex],
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('First Page'),
+        title: const Text('First Page'),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _navigateToPage,
-        items: [
+        items: const  [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home'
@@ -56,28 +56,28 @@ class _FirstPageState extends State<FirstPage> {
         backgroundColor: Colors.blue,
         child: Column(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               child:
                Icon(Icons.account_circle, size: 80, color: Colors.white)),
             ListTile(
-              leading: Icon(Icons.home, color: Colors.white), 
-              title: Text('Home', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.home, color: Colors.white), 
+              title: const Text('Home', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 _navigateToPage(0);
               },
             ),
              ListTile(
-              leading: Icon(Icons.settings, color: Colors.white), 
-              title: Text('Setting', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.settings, color: Colors.white), 
+              title: const Text('Setting', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 _navigateToPage(2);
               },
             ),
              ListTile(
-              leading: Icon(Icons.note, color: Colors.white), 
-              title: Text('To Do List', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.note, color: Colors.white), 
+              title:const  Text('To Do List', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoPage()));
