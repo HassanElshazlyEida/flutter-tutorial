@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
     setState(() {
       db.toDoList.removeAt(index);
     });
-     db.updateDatabase();
+    db.updateDatabase();
   }
   void createNewTask(){
    

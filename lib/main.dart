@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:udemy_flutter/models/cart.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:udemy_flutter/pages/Home.dart';
-import 'pages/ecommerce/intro_page.dart';
+import 'package:udemy_flutter/state_management.dart';
+import 'package:udemy_flutter/pages/ecommerce/intro_page.dart';
 
 
 void main() async {
@@ -11,7 +12,9 @@ void main() async {
   // await Hive.initFlutter();
   // var box = await Hive.openBox('db');
 
-  runApp(ECommerce());
+  runApp(const StateManagement());
+
+  
 }
 
 class MyApp extends StatelessWidget {
@@ -51,3 +54,4 @@ class ECommerce extends StatelessWidget {
     );
   } 
 }
+
