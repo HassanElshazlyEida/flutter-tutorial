@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_flutter/counter/counter_provider.dart';
 
 class StateManagement extends StatelessWidget {
   const StateManagement({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const  MaterialApp(
-      home: Main(),
-      debugShowCheckedModeBanner: false,
+    return CounterProvider(
+      child: const  MaterialApp(
+        home: Main(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
@@ -20,10 +23,11 @@ class Main extends StatefulWidget {
   
 }
 class _MainState extends State<Main> {
-  int counter = 1;
+  
 
   @override
   Widget build(BuildContext context) {
+    
   return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -35,6 +39,8 @@ class _MainState extends State<Main> {
   }
 
   Widget myCounter(BuildContext context){
+    var provider = CounterProvider.of(context);
+
     return StatefulBuilder(builder: 
       (context, setState){
         return Row(
@@ -42,16 +48,16 @@ class _MainState extends State<Main> {
               children: [
                 IconButton(onPressed: (){
                   setState(() {
-                    counter--;
+                    provider.counter--;
                   });
                 },  icon: const Icon(Icons.remove,size: 50,color: Colors.blue,)),
-                Text('$counter',style: const TextStyle(
+                Text('${provider.counter}',style: const TextStyle(
                   fontSize: 50,
                   color: Colors.green
                 ),),
                 IconButton(onPressed: (){
                   setState(() {
-                    counter++;
+                    provider.counter++;
                   });
                 },  icon: const Icon(Icons.add,size: 50,color: Colors.red,)),
               ],
