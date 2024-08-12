@@ -1,15 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:udemy_flutter/counter/bloc/counter_bloc.dart';
+import 'package:udemy_flutter/counter/bloc/counter_event.dart';
 import 'package:udemy_flutter/counter/counter_provider.dart';
 
-class StateManagement extends StatelessWidget {
-  const StateManagement({super.key});
+class StateManagementBloc extends StatelessWidget {
+  const StateManagementBloc({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CounterProvider(
-      child: const  MaterialApp(
-        home: Main(),
+      child:   MaterialApp(
+        home: BlocProvider<CounterBloc>(
+          create: (context) => CounterBloc(),
+          child: const Main(),
+        ),
         debugShowCheckedModeBanner: false,
       ),
     );
@@ -40,25 +46,26 @@ class _MainState extends State<Main> {
   }
 
   Widget myCounter(BuildContext context){
-    var provider = CounterProvider.of(context);
+    CounterBloc counterBloc = CounterBloc();
     return StatefulBuilder(builder: 
       (context, setState){
         return Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(onPressed: (){
-                  setState(() {
-                    provider.counter--;
-                  });
+                 counterBloc.add(CounterEvent.decrement);
                 },  icon: const Icon(Icons.remove,size: 50,color: Colors.blue,)),
-                Text('${provider.counter}',style: const TextStyle(
-                  fontSize: 50,
-                  color: Colors.green
-                ),),
+                BlocBuilder<CounterBloc,int>(
+                  bloc: counterBloc,
+                  builder: (context, state){
+                    return Text('$state',style: const TextStyle(
+                      fontSize: 50,
+                      color: Colors.green
+                    ),);
+                  },
+                ),
                 IconButton(onPressed: (){
-                  setState(() {
-                    provider.counter++;
-                  });
+                     counterBloc.add(CounterEvent.increment);
                 },  icon: const Icon(Icons.add,size: 50,color: Colors.red,)),
               ],
         );

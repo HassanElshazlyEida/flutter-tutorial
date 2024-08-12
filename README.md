@@ -48,6 +48,8 @@ void main() async {
 <img src="prototype/To%20Do%20List%20-%202.png" width="200">
 <img src="prototype/To%20Do%20List%20-%203.png" width="200">
 
+## Shopping Cart
+
 using main function in main.dart file
 ```dart
 void main()  {
@@ -59,3 +61,24 @@ void main()  {
 
 <img src="prototype/Shopping Cart - 1.png" width="200">
 <img src="prototype/Shopping Cart - 2.png" width="200">
+
+
+## Counter State Management Provider 
+using main function in main.dart file
+```dart
+void main()  {
+
+    runApp(const StateManagement());
+  
+}
+```
+
+## Counter State Bloc Design Pattern 
+using main function in main.dart file
+```dart
+void main()  {
+
+    runApp(const StateManagementBloc());
+  
+}
+```
