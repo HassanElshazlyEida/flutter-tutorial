@@ -44,17 +44,16 @@ class _MainState extends State<Main> {
   }
 
   Widget myCounter(BuildContext context){
-    CounterBloc counterBloc = CounterBloc();
+ 
     return StatefulBuilder(builder: 
       (context, setState){
         return Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(onPressed: (){
-                 counterBloc.add(CounterEvent.decrement);
+                    context.read<CounterBloc>().decrement();
                 },  icon: const Icon(Icons.remove,size: 50,color: Colors.blue,)),
                 BlocBuilder<CounterBloc,int>(
-                  bloc: counterBloc,
                   builder: (context, state){
                     return Text('$state',style: const TextStyle(
                       fontSize: 50,
@@ -63,7 +62,7 @@ class _MainState extends State<Main> {
                   },
                 ),
                 IconButton(onPressed: (){
-                     counterBloc.add(CounterEvent.increment);
+                    context.read<CounterBloc>().increment();
                 },  icon: const Icon(Icons.add,size: 50,color: Colors.red,)),
               ],
         );
