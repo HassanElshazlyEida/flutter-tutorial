@@ -1,5 +1,7 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:udemy_flutter/counter/bloc/simple_bloc_delegate.dart';
 import 'package:udemy_flutter/models/cart.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:udemy_flutter/pages/Home.dart';
@@ -15,6 +17,8 @@ void main() async {
   // await Hive.initFlutter();
   // var box = await Hive.openBox('db');
 
+
+  Bloc.observer = SimpleBlocDelegate();
   runApp(const StateManagementBloc());
 
   

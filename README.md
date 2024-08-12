@@ -37,8 +37,8 @@ using main function in main.dart file
 ```dart
 void main() async {
 
-   await Hive.initFlutter();
-   var box = await Hive.openBox('db');
+  await Hive.initFlutter();
+  var box = await Hive.openBox('db');
 
   runApp(MyApp());
 }

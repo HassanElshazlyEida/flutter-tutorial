@@ -16,5 +16,15 @@ class CounterBloc extends Bloc<CounterEvent, int> {
         break;
     }
   }
+  @override
+  void onEvent(CounterEvent event) {
+    super.onEvent(event);
+    // print(event);
+  }
+  @override
+  void onTransition(Transition<CounterEvent, int> transition) {
+    super.onTransition(transition);
+    // print(transition);
+  }
   
 }

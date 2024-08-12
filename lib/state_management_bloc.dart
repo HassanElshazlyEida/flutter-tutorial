@@ -10,14 +10,12 @@ class StateManagementBloc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CounterProvider(
-      child:   MaterialApp(
+    return MaterialApp(
         home: BlocProvider<CounterBloc>(
           create: (context) => CounterBloc(),
           child: const Main(),
         ),
         debugShowCheckedModeBanner: false,
-      ),
     );
   }
 }
