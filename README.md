@@ -47,3 +47,15 @@ void main() async {
 <img src="prototype/To%20Do%20List%20-%201.png" width="200">
 <img src="prototype/To%20Do%20List%20-%202.png" width="200">
 <img src="prototype/To%20Do%20List%20-%203.png" width="200">
+
+using main function in main.dart file
+```dart
+void main()  {
+
+  runApp(ShoppingCart());
+  
+}
+```
+
+<img src="prototype/Shopping Cart - 1.png" width="200">
+<img src="prototype/Shopping Cart - 2.png" width="200">
