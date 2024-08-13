@@ -17,7 +17,7 @@ void main() async {
   // await Hive.initFlutter();
   // var box = await Hive.openBox('db');
 
-
+  // Business Logic Component
   Bloc.observer = SimpleBlocDelegate();
   runApp(const StateManagementBloc());
 

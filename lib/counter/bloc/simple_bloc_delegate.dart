@@ -9,5 +9,7 @@ class SimpleBlocDelegate extends BlocObserver {
     print('${bloc.runtimeType} $change');
   }
 
+  
+
  
 }
