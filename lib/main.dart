@@ -10,6 +10,7 @@ import 'package:udemy_flutter/shopping_cart_home.dart';
 import 'package:udemy_flutter/state_management.dart';
 import 'package:udemy_flutter/pages/ecommerce/intro_page.dart';
 import 'package:udemy_flutter/state_management_bloc.dart';
+import 'package:udemy_flutter/state_management_provider.dart';
 import 'package:udemy_flutter/util/shopping_cart_state.dart';
 
 
@@ -20,7 +21,7 @@ void main() async {
 
   // Business Logic Component
   Bloc.observer = SimpleBlocDelegate();
-  runApp(const PostBlocWidget());
+  runApp(const StateManagementProvider());
 
   
 }
