@@ -56,7 +56,7 @@ class _MyNameWidgetState extends State<MyNameWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var age = context.watch<BasicModel>().age;
+    var age = context.select((BasicModel model) => model.age);
     return Column(
       children: [
         Text('$age'),
