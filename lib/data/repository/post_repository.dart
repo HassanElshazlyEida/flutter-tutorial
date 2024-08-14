@@ -9,11 +9,12 @@ abstract class PostRepositoryInterface {
 class PostRepository extends PostRepositoryInterface {
   @override
   Future<List<Post>> fetchPosts() async {
-    final response = await get('https://jsonplaceholder.typicode.com/posts' as Uri);
+    final response = await get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
     if(response.statusCode == 200){
       final List<dynamic> posts = jsonDecode(response.body);
       return posts.map((json) => Post.fromJson(json)).toList();
     } else {
+      print(response.statusCode);
       throw Exception('Failed to load posts');
     }
   }

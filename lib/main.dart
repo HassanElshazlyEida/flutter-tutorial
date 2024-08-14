@@ -5,6 +5,7 @@ import 'package:udemy_flutter/counter/bloc/simple_bloc_delegate.dart';
 import 'package:udemy_flutter/models/cart.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:udemy_flutter/pages/Home.dart';
+import 'package:udemy_flutter/post_bloc_widget.dart';
 import 'package:udemy_flutter/shopping_cart_home.dart';
 import 'package:udemy_flutter/state_management.dart';
 import 'package:udemy_flutter/pages/ecommerce/intro_page.dart';
@@ -19,7 +20,7 @@ void main() async {
 
   // Business Logic Component
   Bloc.observer = SimpleBlocDelegate();
-  runApp(const StateManagementBloc());
+  runApp(const PostBlocWidget());
 
   
 }
