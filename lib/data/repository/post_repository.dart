@@ -2,14 +2,14 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:udemy_flutter/data/model/post.dart';
 
-abstract class PostRepository {
+abstract class PostRepositoryInterface {
   Future<List<Post>> fetchPosts();
 }
 
-class FakePostRepository extends PostRepository {
+class PostRepository extends PostRepositoryInterface {
   @override
   Future<List<Post>> fetchPosts() async {
-    final response = await get('https://jsonplaceholder.typicode.com/posts');
+    final response = await get('https://jsonplaceholder.typicode.com/posts' as Uri);
     if(response.statusCode == 200){
       final List<dynamic> posts = jsonDecode(response.body);
       return posts.map((json) => Post.fromJson(json)).toList();
