@@ -21,8 +21,8 @@ void main() async {
   // var box = await Hive.openBox('db');
 
   // Business Logic Component
-  Bloc.observer = SimpleBlocDelegate();
-  runApp(const ProviderStateRead());
+  // Bloc.observer = SimpleBlocDelegate();
+  runApp( ECommerce());
 
   
 }
