@@ -62,6 +62,19 @@ void main()  {
 <img src="prototype/Shopping Cart - 1.png" width="200">
 <img src="prototype/Shopping Cart - 2.png" width="200">
 
+## Shopping Cart (Riverpod) state management
+
+using main function in main.dart file
+```dart
+void main()  {
+
+ runApp(const ProviderScope(child:  ShoppingCartRiverpod()));
+  
+}
+```
+
+<img src="prototype/Shopping Cart Riverpod - 1.png" width="200">
+<img src="prototype/Shopping Cart Riverpod - 2.png" width="200">
 
 ## Counter State Management Provider 
 using main function in main.dart file

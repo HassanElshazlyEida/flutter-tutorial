@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
+import 'package:udemy_flutter/Riverpod/shopping_cart_riverpod_home.dart';
 import 'package:udemy_flutter/counter/bloc/simple_bloc_delegate.dart';
 import 'package:udemy_flutter/models/cart.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
@@ -15,14 +17,14 @@ import 'package:udemy_flutter/state_management_provider.dart';
 import 'package:udemy_flutter/util/shopping_cart_state.dart';
 
 
-void main() async {
+void main()  {
 
   // await Hive.initFlutter();
   // var box = await Hive.openBox('db');
 
   // Business Logic Component
   // Bloc.observer = SimpleBlocDelegate();
-  runApp( ECommerce());
+  runApp(const ProviderScope(child:  ShoppingCartRiverpod()));
 
   
 }
@@ -51,19 +53,19 @@ class MyApp extends StatelessWidget {
   } 
 }
 
-class ECommerce extends StatelessWidget {
+// class ECommerce extends StatelessWidget {
   
- @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => Cart(),
-      builder: (context, child) => const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: IntroPage(),
-      ),
-    );
-  } 
-}
+//  @override
+//   Widget build(BuildContext context) {
+//     return ChangeNotifierProvider(
+//       create: (context) => Cart(),
+//       builder: (context, child) => const MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         home: IntroPage(),
+//       ),
+//     );
+//   } 
+// }
 
 class ShoppingCart extends StatelessWidget {
   const ShoppingCart({Key? key});
@@ -80,5 +82,16 @@ class ShoppingCart extends StatelessWidget {
         );
       }
     );
+  }
+}
+class ShoppingCartRiverpod extends StatelessWidget {
+  const ShoppingCartRiverpod({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home:  ShoppingCartRiverpodHome(),
+        debugShowCheckedModeBanner: false,
+      );
   }
 }

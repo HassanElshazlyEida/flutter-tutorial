@@ -17,4 +17,6 @@ class ShoppingCartState extends InheritedWidget {
   static ShoppingCartState of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<ShoppingCartState>()!;
   }
+
+  int get totalItems => products.length;
 }
