@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:udemy_flutter/Getx/getx_home.dart';
 import 'package:udemy_flutter/Riverpod/shopping_cart_riverpod_home.dart';
 import 'package:udemy_flutter/counter/bloc/simple_bloc_delegate.dart';
 import 'package:udemy_flutter/models/cart.dart';
@@ -24,7 +26,7 @@ void main()  {
 
   // Business Logic Component
   // Bloc.observer = SimpleBlocDelegate();
-  runApp(const ProviderScope(child:  ShoppingCartRiverpod()));
+  runApp(const GetxApp());
 
   
 }
@@ -93,5 +95,17 @@ class ShoppingCartRiverpod extends StatelessWidget {
         home:  ShoppingCartRiverpodHome(),
         debugShowCheckedModeBanner: false,
       );
+  }
+}
+
+class GetxApp extends StatelessWidget {
+  const GetxApp({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const GetMaterialApp(
+      home: GetxHome(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
