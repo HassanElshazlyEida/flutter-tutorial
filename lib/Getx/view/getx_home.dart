@@ -16,7 +16,7 @@ class _GetXHomeState extends State<GetXHome> {
         title: const Text('Simple Counter with setState'),
       ),
       body: Center(
-        child:  GetBuilder<HomeController>(
+        child:  GetX<HomeController>(
           init: HomeController(),
           builder: (controller)=> Row(
           mainAxisAlignment: MainAxisAlignment.center,
